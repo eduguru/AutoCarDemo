@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5980AAC72889B73100882F14 /* CarMediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAC62889B73100882F14 /* CarMediaResponse.swift */; };
 		5996CE7928891E0400485A7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CE7828891E0400485A7B /* AppDelegate.swift */; };
 		5996CE7B28891E0400485A7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CE7A28891E0400485A7B /* SceneDelegate.swift */; };
 		5996CE7D28891E0400485A7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CE7C28891E0400485A7B /* ViewController.swift */; };
@@ -77,6 +78,12 @@
 		5996CF5928892E9B00485A7B /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF5828892E9B00485A7B /* FavoritesCoordinator.swift */; };
 		5996CF5B28892EB100485A7B /* CartCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF5A28892EB100485A7B /* CartCoodinator.swift */; };
 		5996CF5D28892EC800485A7B /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF5C28892EC800485A7B /* NotificationsCoordinator.swift */; };
+		5996CF5F28894D0800485A7B /* CarsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF5E28894D0800485A7B /* CarsApi.swift */; };
+		5996CF6128894D1C00485A7B /* CarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF6028894D1C00485A7B /* CarsService.swift */; };
+		5996CF6328895A8200485A7B /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF6228895A8200485A7B /* Pagination.swift */; };
+		5996CF6528895B6900485A7B /* PopularCarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF6428895B6900485A7B /* PopularCarsResponse.swift */; };
+		5996CF6728895BC200485A7B /* PopularCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF6628895BC200485A7B /* PopularCar.swift */; };
+		5996CF69288962A400485A7B /* CarListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996CF68288962A400485A7B /* CarListResponse.swift */; };
 		CB7651CC34F2FF08CFA0E796 /* Pods_AutoCarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFF85F5E552C7667C3DEE9B /* Pods_AutoCarDemo.framework */; };
 		DA603D6A19D30CA6CC734669 /* Pods_AutoCarDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1195557E3271304131B834BB /* Pods_AutoCarDemoTests.framework */; };
 		FCFA8AF8AE5003ECD79C03EB /* Pods_AutoCarDemo_AutoCarDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B139BD99451AA8C004DE7A51 /* Pods_AutoCarDemo_AutoCarDemoUITests.framework */; };
@@ -102,6 +109,7 @@
 /* Begin PBXFileReference section */
 		0BFF85F5E552C7667C3DEE9B /* Pods_AutoCarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1195557E3271304131B834BB /* Pods_AutoCarDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCarDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5980AAC62889B73100882F14 /* CarMediaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMediaResponse.swift; sourceTree = "<group>"; };
 		5996CE7528891E0400485A7B /* AutoCarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5996CE7828891E0400485A7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5996CE7A28891E0400485A7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +186,12 @@
 		5996CF5828892E9B00485A7B /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		5996CF5A28892EB100485A7B /* CartCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoodinator.swift; sourceTree = "<group>"; };
 		5996CF5C28892EC800485A7B /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
+		5996CF5E28894D0800485A7B /* CarsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsApi.swift; sourceTree = "<group>"; };
+		5996CF6028894D1C00485A7B /* CarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsService.swift; sourceTree = "<group>"; };
+		5996CF6228895A8200485A7B /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		5996CF6428895B6900485A7B /* PopularCarsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCarsResponse.swift; sourceTree = "<group>"; };
+		5996CF6628895BC200485A7B /* PopularCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCar.swift; sourceTree = "<group>"; };
+		5996CF68288962A400485A7B /* CarListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListResponse.swift; sourceTree = "<group>"; };
 		6BB23E60274DD7DD7A11B892 /* Pods-AutoCarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCarDemo.release.xcconfig"; path = "Target Support Files/Pods-AutoCarDemo/Pods-AutoCarDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6E5EDB6824D93F6AA7829B19 /* Pods-AutoCarDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCarDemoTests.release.xcconfig"; path = "Target Support Files/Pods-AutoCarDemoTests/Pods-AutoCarDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A05A96B5041B682E5E7D3BB2 /* Pods-AutoCarDemo-AutoCarDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCarDemo-AutoCarDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-AutoCarDemo-AutoCarDemoUITests/Pods-AutoCarDemo-AutoCarDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,10 +254,10 @@
 		5996CE7728891E0400485A7B /* AutoCarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5996CEC928891FC100485A7B /* Common */,
-				5996CEC728891FC100485A7B /* Models */,
-				5996CEBF28891FC100485A7B /* Modules */,
 				5996CEA828891FC000485A7B /* Networking */,
+				5996CEC728891FC100485A7B /* Models */,
+				5996CEC928891FC100485A7B /* Common */,
+				5996CEBF28891FC100485A7B /* Modules */,
 				5996CEB328891FC100485A7B /* Support_Files */,
 				5996CEB028891FC100485A7B /* Views */,
 				5996CE8328891E0A00485A7B /* LaunchScreen.storyboard */,
@@ -283,6 +297,9 @@
 		5996CEAA28891FC000485A7B /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				5996CF6428895B6900485A7B /* PopularCarsResponse.swift */,
+				5996CF68288962A400485A7B /* CarListResponse.swift */,
+				5980AAC62889B73100882F14 /* CarMediaResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -290,6 +307,7 @@
 		5996CEAC28891FC000485A7B /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				5996CF5E28894D0800485A7B /* CarsApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -297,6 +315,7 @@
 		5996CEAE28891FC000485A7B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5996CF6028894D1C00485A7B /* CarsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -379,6 +398,8 @@
 		5996CEC728891FC100485A7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5996CF6228895A8200485A7B /* Pagination.swift */,
+				5996CF6628895BC200485A7B /* PopularCar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -779,8 +800,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5996CF5D28892EC800485A7B /* NotificationsCoordinator.swift in Sources */,
+				5996CF6328895A8200485A7B /* Pagination.swift in Sources */,
 				5996CF0228891FC100485A7B /* MPVolumeView.swift in Sources */,
 				5996CF172889240800485A7B /* CarDetailsViewController.swift in Sources */,
+				5980AAC72889B73100882F14 /* CarMediaResponse.swift in Sources */,
 				5996CF0C28891FC100485A7B /* UILabel.swift in Sources */,
 				5996CF2A2889251100485A7B /* CartItemsViewController.swift in Sources */,
 				5996CF5B28892EB100485A7B /* CartCoodinator.swift in Sources */,
@@ -788,6 +811,7 @@
 				5996CF53288929C300485A7B /* TabCoordinator.swift in Sources */,
 				5996CF0D28891FC100485A7B /* UIAlertController.swift in Sources */,
 				5996CF0428891FC100485A7B /* MaterialColors.swift in Sources */,
+				5996CF6128894D1C00485A7B /* CarsService.swift in Sources */,
 				5996CEFB28891FC100485A7B /* UIView.swift in Sources */,
 				5996CEF028891FC100485A7B /* Coordinator.swift in Sources */,
 				5996CF4C288929A800485A7B /* WalkthroughViewController.swift in Sources */,
@@ -803,16 +827,20 @@
 				5996CF0828891FC100485A7B /* UIViewController.swift in Sources */,
 				5996CF0A28891FC100485A7B /* UIFont.swift in Sources */,
 				5996CF1A2889241600485A7B /* CarDetailsViewModel.swift in Sources */,
+				5996CF6528895B6900485A7B /* PopularCarsResponse.swift in Sources */,
 				5996CE7D28891E0400485A7B /* ViewController.swift in Sources */,
 				5996CF0728891FC100485A7B /* UIButton.swift in Sources */,
 				5996CEEB28891FC100485A7B /* BaseViewController.swift in Sources */,
 				5996CEFC28891FC100485A7B /* CNContact.swift in Sources */,
+				5996CF6728895BC200485A7B /* PopularCar.swift in Sources */,
 				5996CF4E288929A800485A7B /* WalkthroughCoordinator.swift in Sources */,
 				5996CE7928891E0400485A7B /* AppDelegate.swift in Sources */,
 				5996CF33288925EF00485A7B /* MoreViewModel.swift in Sources */,
 				5996CF21288924D100485A7B /* FavoritesViewModel.swift in Sources */,
+				5996CF69288962A400485A7B /* CarListResponse.swift in Sources */,
 				5996CF272889250100485A7B /* CartItemsViewModel.swift in Sources */,
 				5996CEEC28891FC100485A7B /* Storyboarded.swift in Sources */,
+				5996CF5F28894D0800485A7B /* CarsApi.swift in Sources */,
 				5996CF392889264F00485A7B /* HomeViewModel.swift in Sources */,
 				5996CF402889269800485A7B /* HomeViewController.swift in Sources */,
 				5996CEFA28891FC100485A7B /* Date.swift in Sources */,

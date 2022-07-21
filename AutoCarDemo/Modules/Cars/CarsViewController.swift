@@ -9,6 +9,8 @@ import UIKit
 
 class CarsViewController: UIViewController {
 
+    var viewModel: CarsViewModel!
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem = UITabBarItem(
@@ -25,6 +27,9 @@ class CarsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        self.navigationItem.title = "Home"
+        
+        viewModel.getPopular(popular: true)
     }
     
 }

@@ -11,7 +11,8 @@ class CarsCoordinator: Coordinator {
     
     func primaryViewController() -> CarsViewController {
         let vc = CarsViewController()
-        //let model = LifestyleViewModel()
+        let model = CarsViewModel()
+        vc.viewModel = model
         
         return vc
     }
