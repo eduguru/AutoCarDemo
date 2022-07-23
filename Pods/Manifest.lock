@@ -19,7 +19,7 @@ PODS:
     - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
-  - Kingfisher (~> 7.0)
+  - Kingfisher
   - Moya/RxSwift (~> 15.0)
   - RxCocoa
   - RxSwift
@@ -46,6 +46,6 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
 
-PODFILE CHECKSUM: 16565faf3a181bd4c026a30ddb9897c9b74ecf05
+PODFILE CHECKSUM: 71384c76df3e1a303f51afb433d900a2f383a5c1
 
 COCOAPODS: 1.11.3
