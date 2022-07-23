@@ -3,6 +3,7 @@ PODS:
   - CocoaLumberjack (3.7.4):
     - CocoaLumberjack/Core (= 3.7.4)
   - CocoaLumberjack/Core (3.7.4)
+  - Differentiator (5.0.0)
   - Kingfisher (7.2.4)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
@@ -12,6 +13,10 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -22,6 +27,7 @@ DEPENDENCIES:
   - Kingfisher
   - Moya/RxSwift (~> 15.0)
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - SVGKit
 
@@ -29,9 +35,11 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - CocoaLumberjack
+    - Differentiator
     - Kingfisher
     - Moya
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SVGKit
@@ -39,13 +47,15 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
 
-PODFILE CHECKSUM: 71384c76df3e1a303f51afb433d900a2f383a5c1
+PODFILE CHECKSUM: d3160a289c61aabebb47ed147098a3d60ba30412
 
 COCOAPODS: 1.11.3

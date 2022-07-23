@@ -4,6 +4,7 @@
 target 'AutoCarDemo' do
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
   pod 'Kingfisher'
   pod 'Moya/RxSwift', '~> 15.0'
   pod 'SVGKit'
