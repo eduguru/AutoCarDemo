@@ -74,20 +74,26 @@ class CarDetailsViewController: UIViewController {
         
         btn_addItem.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         btn_remove.addTarget(self, action: #selector(removeAction), for: .touchUpInside)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .white
         
+        collectionView.backgroundColor = .white
         collectionView.register(CarMediaCollectionViewCell.nib(), forCellWithReuseIdentifier: CarMediaCollectionViewCell.reuseIdentifier)
         
         viewModel.getCarMedia()
-            .subscribe(
-                onNext: { [weak self] resp in
-                    self?.arrayList = resp
-                    self?.collectionView.reloadData()
-                },
-                onError: {err in
+            .asObserver()
+            .bind(to: collectionView.rx.items(
+                cellIdentifier: CarMediaCollectionViewCell.reuseIdentifier,
+                cellType: CarMediaCollectionViewCell.self)
+            ) { [weak self] row, item, cell in
                 
+                cell.backgroundColor = .clear
+                cell.configure(with: item)
+            }
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(CarMedia.self)
+            .subscribe(onNext: { [weak self] item in
+                self?.appendMedia()
+                self?.showMedia(with: item)
             })
             .disposed(by: disposeBag)
     }
@@ -145,38 +151,7 @@ extension CarDetailsViewController {
         lbl_price.text = "\(item.marketplacePrice)"
         lbl_rating.text = String(format: "%.2f", item.gradeScore)
         
-        guard let imgUrl: URL = URL(string: item.imageUrl) else {
-            return
-        }
-        
     }
-}
-
-extension CarDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrayList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarMediaCollectionViewCell.reuseIdentifier, for: indexPath) as?  CarMediaCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        cell.backgroundColor = .clear
-        let item = arrayList[indexPath.item]
-        
-        cell.configure(with: item)
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let item = arrayList[indexPath.item]
-        appendMedia()
-        showMedia(with: item)
-    }
-    
     
     private func appendMedia() {
         for view in self.contentPreview.subviews {
