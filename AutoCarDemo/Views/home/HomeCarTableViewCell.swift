@@ -14,15 +14,27 @@ class HomeCarTableViewCell: UITableViewCell {
     
     
     @IBOutlet private weak var img_logo: UIImageView!
-    @IBOutlet private weak var img_rating: UIImageView!
+    @IBOutlet private weak var img_rating: UIImageView! {
+        didSet {
+            img_rating.tintColor = .colorPrimary
+        }
+    }
     
     @IBOutlet private weak var lbl_model: UILabel!
     @IBOutlet private weak var lbl_make: UILabel!
     @IBOutlet private weak var lbl_price: UILabel!
     @IBOutlet private weak var lbl_rating: UILabel!
     
-    @IBOutlet private weak var btn_favorite: UIButton!
-    @IBOutlet private weak var btn_add: UIButton!
+    @IBOutlet private weak var btn_favorite: UIButton! {
+        didSet {
+            btn_favorite.tintColor = .red
+        }
+    }
+    @IBOutlet private weak var btn_add: UIButton! {
+        didSet {
+            btn_add.tintColor = .colorPrimary
+        }
+    }
     
     static let reuseIdentifier = "HomeCarTableViewCell"
     

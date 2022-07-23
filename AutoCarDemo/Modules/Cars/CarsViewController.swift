@@ -16,7 +16,7 @@ class CarsViewController: UIViewController {
     var selectedCar: (Car) -> Void = { _ in }
     var viewModel: CarsViewModel!
     
-    let bag = DisposeBag()
+    let disposeBag = DisposeBag()
     var cars: [Car] = []
     var popularCars: [PopularCar] = []
     var categories: [Category] = []
@@ -36,29 +36,65 @@ class CarsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationBar()
+        let searchBar = self.navigationItem.searchController!.searchBar
+        
+        searchBar.rx.text.orEmpty
+            .throttle(.milliseconds(2000), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            //.filter({$0.count > 2})
+            .subscribe(onNext: { [weak self] search in
+                print(search, Date())
+                //self?.childController.searchSubject.accept(search)
+            })
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.searchButtonClicked
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [unowned searchBar] in
+                searchBar.resignFirstResponder()
+            }).disposed(by: disposeBag)
+        
+        searchBar.rx.cancelButtonClicked
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [unowned searchBar] in
+                searchBar.resignFirstResponder()
+            }).disposed(by: disposeBag)
+
+        
+        initiateNetworkCall()
+        setUpTableView()
+    }
+    
+}
+
+extension CarsViewController {
+    //MARK: - Helper Method
+    
+    private func setupNavigationBar() {
+        
         title = "Home"
         self.navigationItem.title = "Home"
         
-        viewModel.getAll()
-            .asObserver()
-            .subscribe(onNext: { [weak self] arr in
-                self?.cars = arr
-                print(arr.count, " hey ", self?.cars.count)
-                self?.tableView.reloadData()
-            }, onError: { err in
-                print(err)
-            })
-            .disposed(by: bag)
+        navigationItem.searchController = UISearchController(searchResultsController: nil)
+        self.definesPresentationContext = true
+        navigationItem.searchController?.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
         
+        navigationItem.searchController?.searchBar.sizeToFit()
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.prefersLargeTitles = false
         
+        let cart = UIBarButtonItem(image: UIImage(named: "tab-shopping-bag"), style: .plain, target: self, action: #selector(cartAction))
+        self.navigationItem.setRightBarButtonItems([cart], animated: true)
+    }
+    
+    @objc func cartAction() {
         
-        do {
-            categories = try! viewModel.categories.value()
-            print(categories)
-        } catch(let error){
-            print(error)
-        }
-        
+    }
+    
+    private func setUpTableView () {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 150
@@ -70,10 +106,26 @@ class CarsViewController: UIViewController {
         tableView.reloadData()
     }
     
-}
-
-extension CarsViewController {
-    //MARK: - Helper Method
+    private func initiateNetworkCall() {
+        viewModel.getAll()
+            .asObserver()
+            .subscribe(onNext: { [weak self] arr in
+                self?.cars = arr
+                self?.tableView.reloadData()
+            }, onError: { err in
+                print(err)
+            })
+            .disposed(by: disposeBag)
+        
+        
+        
+        do {
+            categories = try! viewModel.categories.value()
+            print(categories)
+        } catch(let error){
+            print(error)
+        }
+    }
 }
 
 //MARK: - UICollectionViewDataSource Methods

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,25 +36,25 @@
                         <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X54-vr-ELb">
-                        <rect key="frame" x="32" y="210" width="217" height="64"/>
+                        <rect key="frame" x="32" y="210" width="217" height="54"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z9T-6W-iTx">
-                                <rect key="frame" x="0.0" y="0.0" width="113.5" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="113.5" height="54"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Car model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-k1-YEE">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="22.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Car model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-k1-YEE">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="12.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-aA-bdl">
-                                        <rect key="frame" x="0.0" y="27.5" width="53.5" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="17.5" width="53.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOz-ym-pCa">
-                                        <rect key="frame" x="0.0" y="47" width="33" height="17"/>
+                                        <rect key="frame" x="0.0" y="37" width="33" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -63,7 +62,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rQW-kc-oet">
-                                <rect key="frame" x="123.5" y="0.0" width="93.5" height="64"/>
+                                <rect key="frame" x="123.5" y="0.0" width="93.5" height="54"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7QO-Zl-drs">
                                         <rect key="frame" x="35.5" y="0.0" width="58" height="24"/>
@@ -83,16 +82,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIJ-HX-Tlb">
-                                        <rect key="frame" x="58.5" y="29" width="35" height="35"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVP-eT-m7y">
+                                        <rect key="frame" x="68.5" y="29" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="DsM-pt-1eZ"/>
-                                            <constraint firstAttribute="width" constant="35" id="OzF-fx-s28"/>
+                                            <constraint firstAttribute="height" constant="25" id="JE7-oH-HFC"/>
+                                            <constraint firstAttribute="width" constant="25" id="dqp-Tp-jyh"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                        <state key="normal" image="ic_plus_dark"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -117,7 +113,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="D7Q-y9-fwW" id="C02-22-KKe"/>
-                <outlet property="btn_add" destination="bIJ-HX-Tlb" id="Qpz-is-Vs1"/>
+                <outlet property="btn_add" destination="EVP-eT-m7y" id="290-QO-v2g"/>
                 <outlet property="btn_favorite" destination="Qs2-jQ-3be" id="wZx-I7-bVS"/>
                 <outlet property="img_logo" destination="iZY-pe-y1U" id="ai3-AQ-GwN"/>
                 <outlet property="img_rating" destination="DCe-kF-vMx" id="aHU-3b-smp"/>
@@ -131,10 +127,8 @@
     </objects>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="ic_plus_dark" width="256" height="256"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="vehicle-placeholder" width="350" height="219"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

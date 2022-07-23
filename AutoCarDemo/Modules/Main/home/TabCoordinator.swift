@@ -42,7 +42,7 @@ final class TabCoordinator: Coordinator {
         let navController = BaseNavigationController(rootViewController: mainController)
         navController.modalPresentationStyle = .fullScreen
         
-        navController.setNavigationBarHidden(false, animated: false)
+        navController.setNavigationBarHidden(true, animated: true)
         present(viewController: navController, animated: true)
         
         navigationController = navController
