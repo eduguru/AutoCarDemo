@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594F2F3F288BF024003F5D62 /* CarMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F2F3D288BF024003F5D62 /* CarMediaCollectionViewCell.swift */; };
+		594F2F40288BF024003F5D62 /* CarMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F2F3E288BF024003F5D62 /* CarMediaCollectionViewCell.xib */; };
 		5980AAC72889B73100882F14 /* CarMediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAC62889B73100882F14 /* CarMediaResponse.swift */; };
 		5980AACB288A7BC900882F14 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAC9288A7BC900882F14 /* MenuCollectionViewCell.swift */; };
 		5980AACC288A7BC900882F14 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5980AACA288A7BC900882F14 /* MenuCollectionViewCell.xib */; };
@@ -119,6 +121,8 @@
 /* Begin PBXFileReference section */
 		0BFF85F5E552C7667C3DEE9B /* Pods_AutoCarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1195557E3271304131B834BB /* Pods_AutoCarDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCarDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		594F2F3D288BF024003F5D62 /* CarMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		594F2F3E288BF024003F5D62 /* CarMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		5980AAC62889B73100882F14 /* CarMediaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMediaResponse.swift; sourceTree = "<group>"; };
 		5980AAC9288A7BC900882F14 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		5980AACA288A7BC900882F14 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -249,6 +253,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594F2F3C288BEFE5003F5D62 /* carMedia */ = {
+			isa = PBXGroup;
+			children = (
+				594F2F3D288BF024003F5D62 /* CarMediaCollectionViewCell.swift */,
+				594F2F3E288BF024003F5D62 /* CarMediaCollectionViewCell.xib */,
+			);
+			path = carMedia;
+			sourceTree = "<group>";
+		};
 		5980AAC8288A7BA900882F14 /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +379,7 @@
 		5996CEB028891FC100485A7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				594F2F3C288BEFE5003F5D62 /* carMedia */,
 				5980AAD9288A91FE00882F14 /* category */,
 				5980AAC8288A7BA900882F14 /* home */,
 			);
@@ -716,6 +730,7 @@
 				5996CF4F288929A800485A7B /* WalkthroughViewController.xib in Resources */,
 				5996CE8528891E0A00485A7B /* LaunchScreen.storyboard in Resources */,
 				5996CF14288923E000485A7B /* CarsViewController.xib in Resources */,
+				594F2F40288BF024003F5D62 /* CarMediaCollectionViewCell.xib in Resources */,
 				5996CF2B2889251100485A7B /* CartItemsViewController.xib in Resources */,
 				5980AADD288A922C00882F14 /* CategoryTableViewCell.xib in Resources */,
 				5996CF25288924E700485A7B /* FavoritesViewController.xib in Resources */,
@@ -878,6 +893,7 @@
 				5996CEE428891FC100485A7B /* UniversalLoader.swift in Sources */,
 				5996CF0828891FC100485A7B /* UIViewController.swift in Sources */,
 				5996CF0A28891FC100485A7B /* UIFont.swift in Sources */,
+				594F2F3F288BF024003F5D62 /* CarMediaCollectionViewCell.swift in Sources */,
 				5996CF1A2889241600485A7B /* CarDetailsViewModel.swift in Sources */,
 				5996CF6528895B6900485A7B /* PopularCarsResponse.swift in Sources */,
 				5980AACB288A7BC900882F14 /* MenuCollectionViewCell.swift in Sources */,

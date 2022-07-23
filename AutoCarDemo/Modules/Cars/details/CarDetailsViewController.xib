@@ -17,6 +17,7 @@
                 <outlet property="collectionView" destination="fFD-vE-bIH" id="2Ag-Do-Hvs"/>
                 <outlet property="contentPreview" destination="4K4-Yx-x1N" id="l4l-dJ-otJ"/>
                 <outlet property="img_rating" destination="K0v-Lv-E2d" id="OVZ-V3-hsD"/>
+                <outlet property="lbl_counter" destination="RJC-tK-FA8" id="7Q5-Ey-Dfx"/>
                 <outlet property="lbl_make" destination="ldY-LB-ggd" id="fHz-CN-RSE"/>
                 <outlet property="lbl_model" destination="aaE-Q5-WQQ" id="J4H-tJ-rnK"/>
                 <outlet property="lbl_price" destination="H6r-Gy-aJg" id="fkI-d4-oXe"/>
@@ -55,7 +56,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="130" id="iXj-ox-n7d"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1T-KH-4wL">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1T-KH-4wL">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

@@ -5,7 +5,8 @@
 //  Created by Edwin Weru on 21/07/2022.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
 class CarDetailsViewController: UIViewController {
 
@@ -47,6 +48,7 @@ class CarDetailsViewController: UIViewController {
     @IBOutlet private weak var lbl_make: UILabel!
     @IBOutlet private weak var lbl_price: UILabel!
     @IBOutlet private weak var lbl_rating: UILabel!
+    @IBOutlet weak var lbl_counter: UILabel!
     
     @IBOutlet private weak var btn_done: UIButton! {
         didSet {
@@ -58,11 +60,36 @@ class CarDetailsViewController: UIViewController {
     
     }
     
+    var imageView: UIImageView?
+    
+    var disposeBag = DisposeBag()
+    
+    var arrayList: [CarMedia] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpNavigation()
         configure(with: viewModel)
+        
+        btn_addItem.addTarget(self, action: #selector(addAction), for: .touchUpInside)
+        btn_remove.addTarget(self, action: #selector(removeAction), for: .touchUpInside)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(CarMediaCollectionViewCell.nib(), forCellWithReuseIdentifier: CarMediaCollectionViewCell.reuseIdentifier)
+        
+        viewModel.getCarMedia()
+            .subscribe(
+                onNext: { [weak self] resp in
+                    self?.arrayList = resp
+                    self?.collectionView.reloadData()
+                },
+                onError: {err in
+                
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc func cartAction() {
@@ -71,6 +98,24 @@ class CarDetailsViewController: UIViewController {
     
     @objc func closeAction() {
         self.backAction()
+    }
+    
+    @objc func addAction() {
+        DispatchQueue.main.async {
+            let counter = Int(self.lbl_counter.text ?? "0") ?? 0
+            let itemcount = counter + 1
+            self.lbl_counter.text = "\(abs(itemcount))"
+        }
+    }
+    
+    @objc func removeAction() {
+        DispatchQueue.main.async {
+            let counter = Int(self.lbl_counter.text ?? "0") ?? 0
+            if counter > 0 {
+                let itemcount = counter - 1
+                self.lbl_counter.text = "\(abs(itemcount))"
+            }
+        }
     }
 
 }
@@ -104,21 +149,73 @@ extension CarDetailsViewController {
             return
         }
         
-//        img_logo?.kf.setImage(
-//            with: imgUrl,
-//            placeholder: UIImage(named: ""),
-//            options: [
-//                .loadDiskFileSynchronously,
-//                .cacheOriginalImage,
-//                .transition(.fade(0.25))
-//            ],
-//            progressBlock: { receivedSize, totalSize in
-//                // Progress updated
-//            },
-//            completionHandler: { result in
-//                // Done
-//            }
-//        )
+    }
+}
+
+extension CarDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        arrayList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarMediaCollectionViewCell.reuseIdentifier, for: indexPath) as?  CarMediaCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         
+        cell.backgroundColor = .clear
+        let item = arrayList[indexPath.item]
+        
+        cell.configure(with: item)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let item = arrayList[indexPath.item]
+        appendMedia()
+        showMedia(with: item)
+    }
+    
+    
+    private func appendMedia() {
+        for view in self.contentPreview.subviews {
+            view.removeFromSuperview()
+        }
+        
+        createImageView()
+    }
+    
+    private func createImageView() {
+        imageView = UIImageView(frame: contentPreview.bounds);
+        imageView?.image = UIImage(named:"image.jpg")
+        imageView?.cornerRadius = 10
+        imageView?.clipsToBounds = true
+        imageView?.contentMode = .scaleAspectFit
+        
+        self.contentPreview.addSubview(imageView!)
+    }
+    
+    private func showMedia(with viewModel: CarMedia) {
+        
+        guard let imgUrl: URL = URL(string: viewModel.url) else {
+            return
+        }
+        
+        imageView?.kf.setImage(
+            with: imgUrl,
+            placeholder: UIImage(named: "vehicle-placeholder"),
+            options: [
+                .loadDiskFileSynchronously,
+                .cacheOriginalImage,
+                .transition(.fade(0.25))
+            ],
+            progressBlock: { receivedSize, totalSize in
+                // Progress updated
+            },
+            completionHandler: { result in
+                // Done
+            }
+        )
     }
 }

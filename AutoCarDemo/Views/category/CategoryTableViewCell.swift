@@ -24,6 +24,7 @@ class CategoryTableViewCell: UITableViewCell {
         // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .white
         collectionView.register(MenuCollectionViewCell.nib(), forCellWithReuseIdentifier: MenuCollectionViewCell.reuseIdentifier)
     }
 
@@ -45,6 +46,7 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
+        cell.backgroundColor = .clear
         cell.configure(with: arrayList[indexPath.item])
         
         return cell
