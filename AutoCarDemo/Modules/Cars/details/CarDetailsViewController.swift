@@ -74,8 +74,8 @@ class CarDetailsViewController: UIViewController {
         
         btn_addItem.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         btn_remove.addTarget(self, action: #selector(removeAction), for: .touchUpInside)
-        collectionView.backgroundColor = .white
         
+        collectionView.backgroundColor = .white
         collectionView.register(CarMediaCollectionViewCell.nib(), forCellWithReuseIdentifier: CarMediaCollectionViewCell.reuseIdentifier)
         
         viewModel.getCarMedia()
@@ -150,10 +150,6 @@ extension CarDetailsViewController {
         lbl_make.text = item.fuelType
         lbl_price.text = "\(item.marketplacePrice)"
         lbl_rating.text = String(format: "%.2f", item.gradeScore)
-        
-        guard let imgUrl: URL = URL(string: item.imageUrl) else {
-            return
-        }
         
     }
     

@@ -74,8 +74,8 @@ extension CarsViewController {
     
     private func setupNavigationBar() {
         
-        title = "Home"
-        self.navigationItem.title = "Home"
+        title = "Explore"
+        self.navigationItem.title = "Explore"
         
         navigationItem.searchController = UISearchController(searchResultsController: nil)
         self.definesPresentationContext = true
@@ -86,11 +86,17 @@ extension CarsViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = false
         
+        let tile = UIBarButtonItem(image: UIImage(named: "ic-tile"), style: .plain, target: self, action: #selector(tileAction))
         let cart = UIBarButtonItem(image: UIImage(named: "tab-shopping-bag"), style: .plain, target: self, action: #selector(cartAction))
         self.navigationItem.setRightBarButtonItems([cart], animated: true)
+        self.navigationItem.setLeftBarButtonItems([tile], animated: true)
     }
     
     @objc func cartAction() {
+        
+    }
+    
+    @objc func tileAction() {
         
     }
     
