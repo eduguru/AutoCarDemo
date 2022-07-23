@@ -44,7 +44,7 @@ extension AppDelegate {
         var window = application.windows.first(where: { $0.isKeyWindow })
         window?.resignKey()
         let navController = BaseNavigationController()
-        navController.setNavigationBarHidden(false, animated: false)
+        navController.setNavigationBarHidden(true, animated: true)
 
         window = nil
 

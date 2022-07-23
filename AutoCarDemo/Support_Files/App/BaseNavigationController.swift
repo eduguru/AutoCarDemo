@@ -13,14 +13,14 @@ class BaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarAppearance()
-        view.backgroundColor = .white
+        view.backgroundColor = .aluminum
     }
 
     private func setupNavigationBarAppearance() {
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
 
-        navigationBar.tintColor = .purple
+        navigationBar.tintColor = .colorPrimary
     }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

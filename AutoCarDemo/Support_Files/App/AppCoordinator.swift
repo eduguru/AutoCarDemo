@@ -13,9 +13,7 @@ final class AppCoordinator: Coordinator {
     }
 
     private func goToApp() {
-        let coordinator = TabCoordinator(navigationController: self.navigationController, completion: {
-            
-        })
+        let coordinator = TabCoordinator(parentCoordinator: self)
         coordinator.start()
     }
 }
